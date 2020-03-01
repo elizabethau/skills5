@@ -7,15 +7,14 @@ function showHuman(evt) {
  const selectedId = $('#human-id').val();
 
  let formData = {
-    human_id: selectedId
+    "human_id": selectedId
 
  };
-
 
  // alert(selectedId);
  // $('dd').html('Jesus');
  // $('dd').html(selectedId);
- $.get("/api/human/" + selectedId, (response) => {
+ $.get("/api/human/<int:human_id>", {selectedId}, (response) => {
     $('#fname').html(response.fname);
  });
 
@@ -27,7 +26,6 @@ function showHuman(evt) {
     $('#email').html(response.email);
  });
 
- 
 
 
 }
