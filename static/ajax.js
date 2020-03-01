@@ -10,11 +10,10 @@ function showHuman(evt) {
     "human_id": selectedId
 
  };
-
  // alert(selectedId);
  // $('dd').html('Jesus');
  // $('dd').html(selectedId);
- $.get("/api/human/<int:human_id>", {selectedId}, (response) => {
+ $.get("/api/human/" + selectedId, (response) => {
     $('#fname').html(response.fname);
  });
 
@@ -25,8 +24,6 @@ function showHuman(evt) {
  $.get("/api/human/" + selectedId, (response) => {
     $('#email').html(response.email);
  });
-
-
 
 }
 
